@@ -12,8 +12,11 @@ class BubblePrimary extends Component {
     }
   }
   
-  updateItems(newItems) {
-  	this.setState({items: newItems});
+  updateItems(newItem) {
+    let items = this.state.items; // Kopie původních items, není možné observovat push
+    items.push(newItem); // Přídání nové zprávy
+
+  	this.setState({items}); // Nastavení nového pole zpráv (shorthand pro {items: items})
   }
   
   render() {
